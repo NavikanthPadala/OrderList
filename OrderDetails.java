@@ -1,0 +1,23 @@
+package shopping_cart;
+
+public class OrderDetails {
+    private Product product;
+    private int quantity;
+
+    public OrderDetails(Product product, int quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
+
+    public Product getProduct() { return product; }
+    public int getQuantity() { return quantity; }
+
+    public double getTotalPrice() {
+        return product.getUnitPrice() * quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "[Product=" + product.getProductName() + ", Quantity=" + quantity + ", Total=" + getTotalPrice() + "]";
+    }
+}
